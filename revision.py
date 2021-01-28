@@ -19,7 +19,7 @@ for sura_name in my_suras:
     suras_lengths.append((sura_name,sura_len))
 
 
-for s in suras_lengths[:-37]:
+for s in suras_lengths:
     print(s)
 # * Sorting suras_lengths: [(sura_name, sura_length)]
 #suras_lengths = suras_lengths[:-37] # exclude the last 37 sura from Annb'a to the end
