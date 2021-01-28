@@ -4,7 +4,7 @@ sys.path.append('..')
 import pyquran as q
 from pprint import pprint
 
-my_suras = open('list_me.txt').readlines()
+my_suras = open('list_of_all_suras.txt').readlines()
 
 get_sura = lambda name : q.quran.get_sura(q.quran.get_sura_number(name.strip()), basmalah=False)
 compute_sura_length = lambda sura : len(''.join(sura))
@@ -65,6 +65,7 @@ def group_stat(grous):
 
 pprint(groups)
 group_stat(groups)
-#print('-'*80)
-#import old_division
-#group_stat(old_division.old_every_day)
+
+print('-'*80)
+import old_division
+group_stat(old_division.old_every_day)
