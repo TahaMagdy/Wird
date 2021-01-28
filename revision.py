@@ -17,11 +17,11 @@ for sura_name in my_suras:
     suras_lengths.append((sura_name,sura_len))
 
 
-
-
 sura_length = suras_lengths.sort(key=lambda x:x[1], reverse=True)
 groups = dict()
 i = 1
+
+
 def sum_lengths(list_of_tuples):
     out = 0
     for _, length in list_of_tuples:
@@ -53,3 +53,8 @@ for length, name in suras_lengths:
     groups[minimum_group].append((length, name))
 
 pprint(groups)
+def group_stat(grous):
+    for key, value in grous.items():
+        print(f'{key}: ', sum_lengths(value))
+
+group_stat(groups)
