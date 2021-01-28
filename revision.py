@@ -46,7 +46,7 @@ def get_minimum_group_key(groups):
 GROUPS = 7
 for length, name in suras_lengths:
     if len(groups.keys()) < GROUPS:
-        groups['group ' + str(i)] = [(length, name)]
+        groups['Day ' + str(i)] = [(length, name)]
         i += 1
         continue
     minimum_group = get_minimum_group_key(groups)
