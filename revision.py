@@ -4,23 +4,35 @@ sys.path.append('..')
 import pyquran as q
 from pprint import pprint
 
-my_suras = open('list_of_all_suras.txt').readlines()
+def print_list(list_):
+    for s in list_:
+        print(s)
+
+my_suras = open('list_me.txt').readlines()
 
 get_sura = lambda name : q.quran.get_sura(q.quran.get_sura_number(name.strip()), basmalah=False)
-compute_sura_length = lambda sura : len(''.join(sura))
+def remove_spaces(sura):
+    out = []
+    for k in sura:
+        out.append(k.replace(' ', ''))
+    return out
+
+# Drop any non alphabatical chars
+compute_sura_length = lambda sura : len(''.join(remove_spaces(sura)))
 
 # TODO: Name the dicationary `revision` and change the rest accordingly
 # * Preparing a suras_lengths = [(sura_name, sura_length)]
 suras_lengths = []
 for sura_name in my_suras:
     sura_name = sura_name.strip()
-    sura_string = get_sura(sura_name)
-    sura_len = compute_sura_length(sura_string)
+    sura_list_str = get_sura(sura_name)
+    sura_len = compute_sura_length(sura_list_str)
     suras_lengths.append((sura_name,sura_len))
 
 
-for s in suras_lengths:
-    print(s)
+#print_list(suras_lengths)
+
+
 # * Sorting suras_lengths: [(sura_name, sura_length)]
 #suras_lengths = suras_lengths[:-37] # exclude the last 37 sura from Annb'a to the end
 sura_length = suras_lengths.sort(key=lambda x:x[1], reverse=True)
@@ -49,7 +61,7 @@ def get_minimum_group_key(groups):
 
 
 # Computing the Groups
-GROUPS = 7
+GROUPS = 3
 for length, name in suras_lengths:
     if len(groups.keys()) < GROUPS:
         groups['Day ' + str(i)] = [(length, name)]
@@ -62,10 +74,15 @@ def group_stat(grous):
     for key, value in grous.items():
         print(f'{key}: ', sum_groups_len(value))
 
+def group_stat(grous):
+    i = 1
+    for _, value in grous.items():
+        print('\n\n', '-'*4, f'Day {i}')
+        i += 1
+        for soura, size in value:
+            print(size, soura)
 
-pprint(groups)
+#pprint(groups)
 group_stat(groups)
 
-print('-'*80)
 import old_division
-group_stat(old_division.old_every_day)
