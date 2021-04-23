@@ -8,6 +8,17 @@ def print_list(list_):
     for s in list_:
         print(s)
 
+days = {
+    0:'السبت'
+  , 1:'الأحد'
+  , 2:'الإثنين'
+  , 3:'الثلاثاء'
+  , 4:'الأربعاء'
+  , 5:'الخميس'
+  , 6:'الجمعة'
+}
+
+
 my_suras = open('list_me.txt').readlines()
 
 get_sura = lambda name : q.quran.get_sura(q.quran.get_sura_number(name.strip()), basmalah=False)
@@ -61,7 +72,7 @@ def get_minimum_group_key(groups):
 
 
 # Computing the Groups
-GROUPS = 3
+GROUPS = 6
 for length, name in suras_lengths:
     if len(groups.keys()) < GROUPS:
         groups['Day ' + str(i)] = [(length, name)]
@@ -75,12 +86,15 @@ def group_stat(grous):
         print(f'{key}: ', sum_groups_len(value))
 
 def group_stat(grous):
-    i = 1
+    i = 0
     for _, value in grous.items():
-        print('\n\n', '-'*4, f'Day {i}')
+        print('\n\n')
+        print(f'{days[i % 7]}')
+        print('-'*7)
         i += 1
         for soura, size in value:
-            print(size, soura)
+            #print(size, soura)
+            print(soura, size)
 
 #pprint(groups)
 group_stat(groups)
