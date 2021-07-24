@@ -1,8 +1,7 @@
 import sys
-sys.path.append('..')
-
+sys.path.append('/Users/taha/cs')
 import pyquran as q
-from pprint import pprint
+
 
 def print_list(list_):
     for s in list_:
@@ -74,6 +73,7 @@ def get_minimum_group_key(groups):
 # Computing the Groups
 GROUPS = 6
 for length, name in suras_lengths:
+    print(length)
     if len(groups.keys()) < GROUPS:
         groups['Day ' + str(i)] = [(length, name)]
         i += 1

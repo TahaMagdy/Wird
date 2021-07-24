@@ -3,7 +3,7 @@ sys.path.append('..')
 
 import pyquran as q
 
-sura = q.quran.get_sura(q.quran.get_sura_number('النساء'), with_tashkeel=True, basmalah=False)
+sura = q.quran.get_sura(q.quran.get_sura_number('الأنعام'), with_tashkeel=True, basmalah=False)
 
 f = open('out.tex', 'w')
 out = []
