@@ -2,23 +2,13 @@ import sys
 sys.path.append('/Users/taha/cs')
 import pyquran as q
 
+PARTS_COUNT = 6
+my_suras = open('Hifz_taha.txt').readlines()
 
 def print_list(list_):
     for s in list_:
         print(s)
 
-days = {
-    0:'السبت'
-  , 1:'الأحد'
-  , 2:'الإثنين'
-  , 3:'الثلاثاء'
-  , 4:'الأربعاء'
-  , 5:'الخميس'
-  , 6:'الجمعة'
-}
-
-
-my_suras = open('list_me.txt').readlines()
 
 get_sura = lambda name : q.quran.get_sura(q.quran.get_sura_number(name.strip()), basmalah=False)
 def remove_spaces(sura):
@@ -30,24 +20,16 @@ def remove_spaces(sura):
 # Drop any non alphabatical chars
 compute_sura_length = lambda sura : len(''.join(remove_spaces(sura)))
 
-# TODO: Name the dicationary `revision` and change the rest accordingly
-# * Preparing a suras_lengths = [(sura_name, sura_length)]
+# 1 * Preparing a suras_lengths = [(sura_name, sura_length)] # all suras (not partitioned yet)
 suras_lengths = []
 for sura_name in my_suras:
-    sura_name = sura_name.strip()
+    sura_name     = sura_name.strip()
     sura_list_str = get_sura(sura_name)
-    sura_len = compute_sura_length(sura_list_str)
-    suras_lengths.append((sura_name,sura_len))
+    sura_len      = compute_sura_length(sura_list_str)
+    suras_lengths.append((sura_name, sura_len))
 
-
-#print_list(suras_lengths)
-
-
-# * Sorting suras_lengths: [(sura_name, sura_length)]
-#suras_lengths = suras_lengths[:-37] # exclude the last 37 sura from Annb'a to the end
-sura_length = suras_lengths.sort(key=lambda x:x[1], reverse=True)
-groups = dict()
-i = 1
+# 2 * Sorting suras_lengths: [(sura_name, sura_length)]
+suras_lengths.sort(key=lambda x:x[1], reverse=True)
 
 
 def sum_groups_len(list_of_tuples):
@@ -70,33 +52,35 @@ def get_minimum_group_key(groups):
 
 
 
-# Computing the Groups
-GROUPS = 6
-for length, name in suras_lengths:
-    print(length)
-    if len(groups.keys()) < GROUPS:
-        groups['Day ' + str(i)] = [(length, name)]
-        i += 1
+# 3 * Computing the partitions
+partitions = dict()
+for i, name_length in enumerate(suras_lengths):
+    name, length = name_length
+    if len(partitions.keys()) < PARTS_COUNT:
+        key = f'{i+1}:{PARTS_COUNT}'
+        partitions[key] = [(name, length)]
         continue
-    minimum_group = get_minimum_group_key(groups)
-    groups[minimum_group].append((length, name))
+    minimum_group = get_minimum_group_key(partitions)
+    partitions[minimum_group].append((name, length))
 
-def group_stat(grous):
-    for key, value in grous.items():
-        print(f'{key}: ', sum_groups_len(value))
 
-def group_stat(grous):
-    i = 0
-    for _, value in grous.items():
+def print_groups_sizes(partitions):
+    for i, key_value in enumerate(partitions.items()):
+        key, value = key_value
+        print(key)
+        print(value)
+        print(f'{i+1}:{PARTS_COUNT} ', sum_groups_len(value))
+
+def group_stat(partitions):
+    for i, key_value in enumerate(partitions.items()):
+        key, value = key_value
         print('\n\n')
-        print(f'{days[i % 7]}')
-        print('-'*7)
-        i += 1
+        print(f'{key} الحزب')
+        print('-'*9)
         for soura, size in value:
-            #print(size, soura)
             print(soura, size)
 
-#pprint(groups)
-group_stat(groups)
 
-import old_division
+group_stat(partitions)
+# print('-'*10)
+# print_groups_sizes(groups)
