@@ -23,7 +23,7 @@ from Sura import Sura
 class RevisionWird:
     def __init__(self
             , parts_count=6
-            , memorized_suras_names_file='Hifz_taha.txt'):
+            , memorized_suras_names_file='suras_names_finished_taha.txt'):
         self.wird                       = dict()  # for example {'1:6' : [sura] }
         self.parts_count                = parts_count
         self.memorized_suras_names_list = open(memorized_suras_names_file).readlines()
