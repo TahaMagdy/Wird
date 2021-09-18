@@ -82,13 +82,6 @@ class RevisionWird:
             self.wird[key_minimum_len_part].append( sura )
 
 
-#################################################
-
-
-
-
-
-
 
 if __name__ == '__main__':
     wird = RevisionWird()
