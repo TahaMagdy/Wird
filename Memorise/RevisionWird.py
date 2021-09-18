@@ -17,15 +17,6 @@ def print_groups_sizes(partitions):
         print(value)
         print(f'{i+1}:{self.parts_count} ', sum_groups_len(value))
 
-def group_stat(partitions):
-    for i, key_value in enumerate(partitions.items()):
-        key, value = key_value
-        print('\n\n')
-        hizb =  'الحزب'
-        print(f'{hizb} {key}')
-        print('-'*9)
-        for soura, size in value:
-            print(soura, size)
 
 #################################################
 from Sura import Sura
@@ -63,7 +54,6 @@ class RevisionWird:
 
         # * Sorting tmp_sura_list: [(sura_name, sura_length)]
         tmp_sura_list.sort(key=lambda sura: sura.length, reverse=True)
-
         assert len(tmp_sura_list) == len(self.memorized_suras_names_list)
 
         return tmp_sura_list
