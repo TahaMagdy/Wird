@@ -3,6 +3,7 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{polyglossia}
 \usepackage[dvipsnames]{xcolor}
+\pagenumbering{gobble}
 % This beautiful one line disable the initial spacing at the beginning of a line
 \usepackage[parfill]{parskip} 
 \usepackage{setspace}
@@ -22,7 +23,4 @@
 
 % Start %
 
-\input{out.tex}
 
-
-\end{document}

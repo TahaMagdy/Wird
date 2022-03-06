@@ -85,4 +85,13 @@ def print_hizb(memorized_sura_names, NUMBER_PARTITIONS=7):
     assert (len_TEST + candidate_PN) == len_memorized_quran, 'Partitions size does not sum up to memorized size'
 
 if __name__ == '__main__':
-    print_hizb(SuraNames.memorized, NUMBER_PARTITIONS=7)
+    import sys
+    if len(sys.argv) < 2:
+        print('Please enter the number of partitions: as a command line arg')
+        sys.exit()
+
+    number_of_partitions = int(sys.argv[1])
+    print_hizb(SuraNames.memorized, NUMBER_PARTITIONS=number_of_partitions)
+
+
+
