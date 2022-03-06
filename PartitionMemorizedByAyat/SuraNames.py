@@ -2,12 +2,12 @@ all_quran = {
 'الفاتحة'    : True
 ,'البقرة'    : True
 ,'آل عمران'  : True
-,'النساء'    : False
-,'المائدة'   : False
-,'الأنعام'    : False
-,'الأعراف'    : False
-,'الأنفال'    : False
-,'التوبة'    : False
+    ,'النساء'    : False
+    ,'المائدة'   : False
+    ,'الأنعام'    : False
+    ,'الأعراف'    : False
+    ,'الأنفال'    : False
+    ,'التوبة'    : False
 ,'يونس'      : True
 ,'هود'       : True
 ,'يوسف'      : True
@@ -15,26 +15,26 @@ all_quran = {
 ,'ابراهيم'   : True
 ,'الحجر'     : True
 ,'النحل'     : True
-,'الإسراء'    : False
-,'الكهف'     : False
-,'مريم'      : False
-,'طه'        : False
-,'الأنبياء'   : False
-,'الحج'      : False
-,'المؤمنون'  : False
-,'النور'     : False
-,'الفرقان'   : False
-,'الشعراء'   : False
-,'النمل'     : False
-,'القصص'     : False
-,'العنكبوت'  : False
-,'الروم'     : False
-,'لقمان'     : False
-,'السجدة'    : False
-,'الأحزاب'    : False
-,'سبإ'       : False
-,'فاطر'      : False
-,'يس'        : False
+    ,'الإسراء'    : False
+    ,'الكهف'     : False
+    ,'مريم'      : False
+    ,'طه'        : False
+    ,'الأنبياء'   : False
+    ,'الحج'      : False
+    ,'المؤمنون'  : False
+    ,'النور'     : False
+    ,'الفرقان'   : False
+    ,'الشعراء'   : False
+    ,'النمل'     : False
+    ,'القصص'     : False
+    ,'العنكبوت'  : False
+    ,'الروم'     : False
+    ,'لقمان'     : False
+    ,'السجدة'    : False
+    ,'الأحزاب'    : False
+    ,'سبإ'       : False
+    ,'فاطر'      : False
+    ,'يس'        : False
 ,'الصافات'   : True
 ,'ص'         : True
 ,'الزمر'     : True
