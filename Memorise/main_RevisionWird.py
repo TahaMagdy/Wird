@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/taha/cs')
+sys.path.append('/Users/tahamagdy/MacBook-13/cs/')
 import pyquran as q
 
 
@@ -85,8 +85,8 @@ class RevisionWird:
 
 if __name__ == '__main__':
     from functools import reduce
-    wird = RevisionWird()
-    # print(wird)
+    wird = RevisionWird(parts_count=14)
+    print(wird)
     for i, suras in wird.wird.items():
         print(suras[0].length)
         # m = sum(map(lambda sura: sura.length, suras))
