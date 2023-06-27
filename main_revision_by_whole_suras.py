@@ -3,7 +3,7 @@ sys.path.append('/Users/tahamagdy/MacBook-13/cs')
 sys.path.append('/Users/tahamagdy/MacBook-13/cs/quran')
 
 import pyquran as q
-import MemorizedQuran
+import MemoDict
 
 def print_list(list_):
     for s in list_:
@@ -20,7 +20,7 @@ days = {
 }
 
 
-my_suras = [sura for sura, memo_state in MemorizedQuran.quran.items() if memo_state == MemorizedQuran.YES]
+my_suras = [sura for sura, memo_state in MemoDict.quran.items() if memo_state == MemoDict.YES]
 
 
 

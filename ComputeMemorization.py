@@ -1,4 +1,4 @@
-import MemorizedQuran
+import MemoDict
 
 
 get_memorized_or_not_memorized = \
@@ -13,8 +13,8 @@ def get_memorized(how_much_quran_do_you_know):
 
 # TESTING
 
-memorized     = get_memorized_or_not_memorized(lambda n: n > 0, MemorizedQuran.quran)
-not_memorized = get_memorized_or_not_memorized(lambda n: n == 0, MemorizedQuran.quran)
+memorized     = get_memorized_or_not_memorized(lambda n: n > 0, MemoDict.quran)
+not_memorized = get_memorized_or_not_memorized(lambda n: n == 0, MemoDict.quran)
 
 assert len(memorized) + len(not_memorized) == 114 \
             , 'memorized + not_memorized != 114'

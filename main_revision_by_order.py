@@ -8,7 +8,7 @@ sys.path.append('/Users/tahamagdy/MacBook-13/cs/quran')
 import pyquran as q
 import math
 
-import MemorizedQuran
+import MemoDict
 import ComputeMemorization
 
 def get_memorized_sura_text_dict(memorized_sura_aya):
@@ -110,7 +110,7 @@ def get_number_of_paritions():
 if __name__ == '__main__':
 
     n = get_number_of_paritions()
-    memorized = ComputeMemorization.get_memorized(MemorizedQuran.quran)
+    memorized = ComputeMemorization.get_memorized(MemoDict.quran)
     print_hizb(memorized, NUMBER_PARTITIONS=n)
 
 
