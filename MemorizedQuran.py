@@ -1,7 +1,7 @@
-F'''
-    1_000: means I memorized the entir sura
-    0: means I don't memorize it
-    0 > 1 < 1_000: I memorize part of it
+'''
+    1_000         : entir sura is memorized
+    0             : entir sura is NOT memorized
+    0 < n < 1_000 : n is the number of ayat memorized from a sura
 '''
 
 YES = 1_000
