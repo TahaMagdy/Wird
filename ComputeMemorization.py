@@ -13,8 +13,8 @@ def get_memorized(how_much_quran_do_you_know):
 
 # TESTING
 
-memorized     = get_memorized_or_not_memorized(lambda n: n > 0, MemorizedQuran.quran_taha)
-not_memorized = get_memorized_or_not_memorized(lambda n: n == 0, MemorizedQuran.quran_taha)
+memorized     = get_memorized_or_not_memorized(lambda n: n > 0, MemorizedQuran.quran)
+not_memorized = get_memorized_or_not_memorized(lambda n: n == 0, MemorizedQuran.quran)
 
 assert len(memorized) + len(not_memorized) == 114 \
             , 'memorized + not_memorized != 114'

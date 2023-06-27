@@ -20,7 +20,7 @@ days = {
 }
 
 
-my_suras = [sura for sura, memo_state in MemorizedQuran.quran_taha.items() if memo_state == MemorizedQuran.YES]
+my_suras = [sura for sura, memo_state in MemorizedQuran.quran.items() if memo_state == MemorizedQuran.YES]
 
 
 

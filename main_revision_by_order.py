@@ -110,7 +110,7 @@ def get_number_of_paritions():
 if __name__ == '__main__':
 
     n = get_number_of_paritions()
-    memorized = ComputeMemorization.get_memorized(MemorizedQuran.quran_taha)
+    memorized = ComputeMemorization.get_memorized(MemorizedQuran.quran)
     print_hizb(memorized, NUMBER_PARTITIONS=n)
 
 
